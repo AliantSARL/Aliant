@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="281.85867mm"
+   height="294.38486mm"
+   viewBox="0 0 281.85867 294.38486"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="LogoAliant_V2_NoText.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     width="500mm"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.46038578"
+     inkscape:cx="951.29913"
+     inkscape:cy="487.94844"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1500"
+     inkscape:window-height="978"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     showborder="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Logo ALIANT"
+     style="display:inline">
+    <path
+       id="path929"
+       style="display:inline;opacity:1;fill:#e05d22;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.73376"
+       d="m 208.33827,294.38433 c 0,0 18.80819,-0.55424 18.80819,-0.55424 5.62155,-0.13667 7.91911,-3.13201 6.90209,-8.99385 -0.14628,-0.8251 -0.35423,-1.7082 -0.63068,-2.65128 0,0 -8.6472,-21.20765 -8.6472,-21.20765 0,0 -27.86228,-68.32644 -27.86228,-68.32644 0,0 -28.86532,-70.77425 -28.86532,-70.77425 -3.58752,-7.53548 -11.3448,-11.34469 -23.28808,-11.41634 -12.01721,-0.14762 -20.07965,3.36313 -24.18473,10.52396 0,0 -55.95323,100.89953 -55.95323,100.89953 -2.38567,6.14611 -0.29655,9.41459 6.27083,9.80059 0,0 21.893967,0 21.893967,0 5.376608,-0.38636 9.067993,-2.52635 11.081223,-6.44191 0,0 34.62562,-58.25329 34.62562,-58.25329 6.91821,-10.92854 8.23109,-11.46023 12.53733,0 0,0 39.61595,102.17788 39.61595,102.17788 0,0 6.39352,16.48533 6.39352,16.48533 2.08501,5.30704 5.86187,8.20791 11.30307,8.73248 z"
+       inkscape:label="A logo" />
+    <path
+       id="path907"
+       style="display:inline;fill:#ffba30;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.73376"
+       d="m 240.40961,145.69094 c 10.44548,-35.33291 25.55316,-65.582936 41.44906,-85.784961 -31.85649,10.623399 -71.82615,95.909071 -78.33293,126.461901 0,0 26.5632,65.12984 26.5632,65.12984 -5.7717,-26.33891 -1.73586,-65.0144 10.32067,-105.80678 z"
+       inkscape:label="Curve right logo" />
+    <path
+       id="path903"
+       style="display:inline;fill:#ffba30;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.73376"
+       d="M 234.55244,26.791992 C 223.32332,52.10482 166.74358,71.354505 98.634277,71.354505 59.9798,71.354505 25.05144,65.155158 0,55.165115 c 15.93973,22.844186 69.4984,39.639167 133.12116,39.639167 67.79502,0 124.16676,-19.071885 135.76787,-44.206526 -11.64741,-8.309732 -22.31936,-15.378218 -34.33659,-23.805764 z"
+       inkscape:label="Shoulders logo" />
+    <path
+       id="path905"
+       style="display:inline;fill:#e05d22;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:4.73376"
+       d="m 168.13284,27.344441 c 0,15.107702 -10.63508,27.353837 -23.7525,27.353837 -13.11755,0 -23.75022,-12.246135 -23.75022,-27.353837 C 120.63012,12.243714 131.26279,0 144.38034,0 c 13.11742,0 23.7525,12.243714 23.7525,27.344441 z"
+       inkscape:label="Head logo" />
+  </g>
+</svg>

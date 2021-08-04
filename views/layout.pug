@@ -3,5 +3,23 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap", rel="stylesheet")
   body
-    block content
+    header
+      img(src="/images/Logo_Aliant.svg", alt="Aliant")
+      nav
+        ul
+          li
+            a(href="/#Services") Services
+          li
+            a(href="https://www.dcm4chee.fr/") dcm4chee
+          li
+            a(href="#") Partenaires
+          li
+            a(href="#") Contact
+    div(class="content")
+      block content
+    footer
+      p © 2021 Aliant S.A.R.L.
