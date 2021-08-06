@@ -76,6 +76,58 @@ section.image img {
   display: block;
 }
 
+#Services {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(10em, 40em));
+  justify-content: center;
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+#Services .service {
+  max-width: 40em;
+  background-color: lightgray;
+  padding: 1em;
+}
+
+#Partenaires {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: #FFF;
+}
+
+#Partenaires .partenaire {
+  margin: 1em;
+  max-height: 10em;
+  max-width: 10em;
+}
+
+#Partenaires .partenaire:first-child {
+  width: 10em;
+}
+
+#Clients {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: #FFF;
+}
+
+#Clients .client {
+  margin: 1em;
+  max-height: 10em;
+  max-width: 10em;
+}
+
 footer {
   background-color: #E0E0E0;
   padding: 1em;
@@ -87,16 +139,12 @@ footer p {
 
 /***************************/
 
-h2 {
+#Contact h2 {
   text-align: center;
   font-size: 2.5em;
 }
-
 #contact, label, input[name="submit"] {
   position: relative;
-}
-label > span, input, textarea, button {
-  box-sizing: border-box;
 }
 label {
   display: block;
@@ -115,9 +163,6 @@ input[type="text"], input[type="email"], textarea {
   border: 1px solid #ccc;
   outline: none;
 }
-input.invalid, textarea.invalid {
-  border-color: #d5144d;
-}
 textarea {
   height: 6em;
 }
@@ -130,44 +175,16 @@ input[type="submit"]:hover, button:hover {
   background: #ff7909;
 }
 
-@media screen and (min-width: 30em) {
-  #contact-form h2 {
-    text-align: center;
-    font-size: 2em;
-    line-height: 1.5;
-  }
-  label > span {
-    display: none;
-  }
-  input, textarea, button {
-    width: 100%;
-    line-height: 1.5;
-  }
-  textarea {
-    height: 10em;
-  }
-}
-
-@media screen and (min-width: 48em) {
-  #contact-form {
-    text-align: justify;
-    line-height: 0;
-  }
-  #contact-form form {
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    line-height: 1.5;
-  }
-}
-
 /**************************************************/
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1350px) {
 
   section.text {
-    padding: 2em 20vw;
+    padding: 2em 15vw;
+  }
+
+  #Services {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
@@ -207,6 +224,10 @@ input[type="submit"]:hover, button:hover {
 
   section.text {
     padding: 2em;
+  }
+
+  #Services {
+    grid-template-columns: 1fr;
   }
 
 }
