@@ -11,6 +11,11 @@ body {
   color: #2C2C2C;
 }
 
+pre {
+  max-width: 100vw;
+  overflow: auto;
+}
+
 a {
   color: #E05D22;
   text-decoration: none;
@@ -86,7 +91,7 @@ section.image img {
 
 #Services .service {
   max-width: 40em;
-  background-color: lightgray;
+  background-color: #e08860;
   padding: 1em;
 }
 

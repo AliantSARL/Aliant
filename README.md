@@ -3,7 +3,7 @@ Aliant's website repository
 
 # To Do
 
-- Change companies pictures and remove KONI
+- Change companies' pictures
 - Design services blocks
-- Set up nodemailer
 - Add contact data
+- Email sent confirmation either on the same page or a new one

@@ -4,6 +4,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const nodemailer = require("nodemailer");
+const multiparty = require("multiparty");
+require("dotenv").config();
 
 const app = express();
 
