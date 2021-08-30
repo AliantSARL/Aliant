@@ -6,9 +6,9 @@
 
 body {
   margin: 0;
-  font-size: 1em;
-  font-family: "Work Sans", Helvetica, Arial, sans-serif;
-  color: #2C2C2C;
+  font-size: 1rem;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  color: #333;
 }
 
 pre {
@@ -21,9 +21,14 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  margin: 0 0 0.5em 0;
+}
+
 p {
   text-align: justify;
   margin-top: 0.5em;
+  line-height: 2em;
 }
 
 .wrapper {
@@ -72,8 +77,18 @@ header .menu {
 }
 
 section.text {
-  padding: 2em 25vw;
-  border-bottom: solid 1px #FFFFFF;
+  padding: 2em 15vw;
+  box-shadow: 0 1em 3em rgba(0,0,0,0.1);
+}
+
+#Presentation {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+section.text img {
+  width: 100%;
+  padding-left: 2em;
 }
 
 section.image img {
@@ -81,7 +96,7 @@ section.image img {
   display: block;
 }
 
-#Services {
+.grid-8 {
   display: grid;
   grid-template-columns: repeat(4, minmax(10em, 40em));
   justify-content: center;
@@ -89,10 +104,30 @@ section.image img {
   padding: 1em;
 }
 
+#Services h1 {
+  margin: 1em 0 0 0;
+  font-size: 3em;
+  text-align: center;
+}
+
+#Services > p {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0.5em;
+  text-align: center;
+}
+
 #Services .service {
   max-width: 40em;
-  background-color: #e08860;
+  background-color: #fff;
   padding: 1em;
+  text-align: center;
+}
+
+#Services .service img {
+  width: 5em;
+  margin: auto;
 }
 
 #Partenaires {
@@ -107,13 +142,13 @@ section.image img {
 }
 
 #Partenaires .partenaire {
-  margin: 1em;
-  max-height: 10em;
-  max-width: 10em;
+  margin: 3em;
+  max-height: 5em;
+  max-width: 5em;
 }
 
 #Partenaires .partenaire:first-child {
-  width: 10em;
+  width: 5em;
 }
 
 #Clients {
@@ -128,9 +163,9 @@ section.image img {
 }
 
 #Clients .client {
-  margin: 1em;
-  max-height: 10em;
-  max-width: 10em;
+  margin: 3em;
+  max-height: 5em;
+  max-width: 5em;
 }
 
 footer {
@@ -161,11 +196,11 @@ input, textarea, button {
   width: 100%;
   padding: 0.5em;
   border: none;
-  font: 300 100%/1.2 'Work Sans', sans-serif;
+  font: 300 100%/1.2 Montserrat, sans-serif;
 }
 input[type="text"], input[type="email"], textarea {
   margin: 1em 0 0 0;
-  border: 1px solid #ccc;
+  border: none;
   outline: none;
 }
 textarea {
@@ -185,10 +220,10 @@ input[type="submit"]:hover, button:hover {
 @media screen and (max-width: 1350px) {
 
   section.text {
-    padding: 2em 15vw;
+    padding: 2em 10vw;
   }
 
-  #Services {
+  .grid-8 {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -197,7 +232,7 @@ input[type="submit"]:hover, button:hover {
 @media screen and (max-width: 1000px) {
 
   section.text {
-    padding: 2em 10vw;
+    padding: 2em 5vw;
   }
 
 }
@@ -231,7 +266,16 @@ input[type="submit"]:hover, button:hover {
     padding: 2em;
   }
 
-  #Services {
+  #Presentation {
+     grid-template-columns: 1fr;
+   }
+
+  #Presentation img {
+    width: 100%;
+    padding: 1em 0 0 0;
+  }
+
+  .grid-8 {
     grid-template-columns: 1fr;
   }
 

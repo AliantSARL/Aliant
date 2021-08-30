@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
 });
 
 //Set up default mongoose connection
-const mongoDB = 'mongodb+srv://Elisa:Dgr5LArXT0wrJIxP@aliant001.5szez.mongodb.net/Test?retryWrites=true&w=majority';
+const mongoDB = process.env.DB;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
       console.log('Connected to the database.')
