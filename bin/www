@@ -6,20 +6,26 @@
 
 const app = require('../app');
 const debug = require('debug')('aliant:server');
-const http = require('http');
+const https = require('https');
+const fs = require('fs');
 
 /**
- * Get port from environment and store in Express.
+ * Get port and options from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+const options = {
+  key: fs.readFileSync(process.env.KEYPATH),
+  cert: fs.readFileSync(process.env.CERTPATH)
+};
+
 /**
- * Create HTTP server.
+ * Create HTTPS server.
  */
 
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -50,7 +56,7 @@ function normalizePort(val) {
 }
 
 /**
- * Event listener for HTTP server "error" event.
+ * Event listener for HTTPS server "error" event.
  */
 
 function onError(error) {
@@ -78,7 +84,7 @@ function onError(error) {
 }
 
 /**
- * Event listener for HTTP server "listening" event.
+ * Event listener for HTTPS server "listening" event.
  */
 
 function onListening() {
