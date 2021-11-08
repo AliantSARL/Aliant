@@ -11,7 +11,8 @@ html(lang="fr")
 
     link(rel="shortcut icon", sizes="any", type="image/svg+xml", href="/images/Logo_Aliant_NoText.svg")
     link(rel="stylesheet", href="/stylesheets/fonts.css")
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/stylesheets/aliant_vanilla.css")
+    link(rel="stylesheet", href="/stylesheets/aliant_framework.css")
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap", rel="stylesheet")
@@ -25,10 +26,9 @@ html(lang="fr")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js')
     script(src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==' crossorigin='')
 
-
   body
 
-    div.wrapper
+    .wrapper
 
       nav
         a(href="/")
@@ -39,10 +39,10 @@ html(lang="fr")
           li
             a(href="https://www.dcm4chee.fr/") dcm4chee
           li
-            a(href="#Contact") Contact
+            a(href="/contact") Contact
 
-      div(class="content")
+      .content
         block content
 
-      footer
-        p Copyright © 2021, Aliant S.A.R.L. All Rights Reserved.
+      include footer.pug
+        
