@@ -1,65 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+/*
+ *   Copyright (c) 2021 
+ *   All rights reserved.
+ */
 
-body {
-  margin: 0;
-  font-size: 1rem;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-pre {
-  max-width: 100vw;
-  overflow: auto;
-}
-
-a {
-  color: #E05D22;
-  text-decoration: none;
-}
-
-a.button{
-  display:inline-block;
-  color:#E05D22;
-  background-color:transparent;
-  border:1px solid #E05D22;
-  padding: 1em 2em;
-  margin: 2em 0 0 0;
-  background-size: 200% 100%;
-  background-image: linear-gradient(to right, transparent 50%, #E05D22 50%);
-  transition:
-          background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s,
-          color .5s ease 0s,
-          background-color .5s ease;
-}
-
-a.button:hover{
-  color:rgba(255, 255, 255, 1);
-  background-color:#E05D22;
-  background-position: -100% 100%;
-}
-
-h1 {
-  margin: 0 0 0.5em 0;
-}
-
-p {
-  text-align: justify;
-  margin-top: 0.5em;
-  line-height: 2em;
-}
-
-.b {
-  font-weight: bold;
-}
-
-.i {
-  font-style: italic;
-}
+/* Layout */
 
 .wrapper {
   min-height: 100vh;
@@ -67,14 +11,17 @@ p {
   grid-template-rows: auto 1fr auto;
 }
 
+/* Navigation bar */
+
 nav {
   background-color: #FFFFFF;
+  box-shadow: 0 0 1em rgba(0,0,0,0.3);
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  z-index: 999;
+  z-index: 10;
 }
 
 nav .logo {
@@ -102,14 +49,24 @@ menu li:hover {
   border-bottom: solid 0.3em #E05D22;
 }
 
-menu a {
+menu li a {
   display: inline-block;
   padding: 0.8em;
 }
 
+/* Content */
+
 .content {
   background-color: #FFFFFF;
 }
+
+section.text {
+  max-width: 85em;
+  margin: 0 auto;
+  padding: 5em 1em;
+}
+
+/* Slider */
 
 #Slider {
   display: grid;
@@ -131,10 +88,10 @@ menu a {
           hard-light,
           normal;
   filter: contrast(80%) brightness(90%) opacity(90%) saturate(120%);
-}
+} /* Simplify */
 
 #Slider .first {
-  z-index: 999;
+  z-index: 1;
   position: relative;
   padding: 5em;
   color: white;
@@ -146,37 +103,32 @@ menu a {
   text-shadow: 0 0 0.2em #00000088;
 }
 
-#Slider .text {
+#Slider .box .logo {
+  width: 20em;
+  margin-bottom: 1em;
+  filter: brightness(1000%) drop-shadow(0 0 0.2em #00000055);
+}
+
+#Slider .box {
   position: relative;
   max-width: 40em;
   font-size: 1.4em;
   font-weight: bold;
 }
 
-#Slider p {
+#Slider .box p {
   text-align: left;
   line-height: 1.5em;
 }
 
-#Slider .logo {
-  width: 20em;
-  margin-bottom: 1em;
-  filter: brightness(1000%) drop-shadow(0 0 0.2em #00000055);
-}
-
-.section-text {
-  max-width: 85em;
-  margin: 0 auto;
-  padding: 5em 1em;
-  filter:
-}
+/* About */
 
 #Presentation {
   width: 100%;
   background: #FAFAFA;
 }
 
-#Presentation .section-text {
+#Presentation section.text {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
@@ -192,6 +144,16 @@ section.image img {
   display: block;
 }
 
+/* Services */
+
+#Services .desc {
+  max-width: 83rem;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
 .grid-8 {
   display: grid;
   grid-template-columns: repeat(4, minmax(10em, 20em));
@@ -200,41 +162,44 @@ section.image img {
   padding: 1em;
 }
 
-h2 {
-  padding: 0.5em 0 0 0;
-  font-size: 3em;
-  text-align: center;
-}
-
-#Services>p {
-  max-width: 83rem;
-  font-size: 1.5em;
-  line-height: 1em;
-  margin: 0.5em auto;
-  text-align: center;
-}
-
-#Services .service {
+#Services .cell {
   background-color: #F3F3F3;
   text-align: center;
 }
 
-.service header {
+#Services .cell header {
   padding: 1em;
   background: linear-gradient(#ffbd8b, #E05D22);
+}
+
+#Services .cell header h3 {
   color: #FFFFFF;
 }
 
-.service p {
+#Services .cell p {
   margin: 1em;
   text-align: center;
 }
 
-#Services .service img {
+#Services .cell img {
   width: 5em;
   margin: auto;
   color: #FFFFFF;
 }
+
+#Partenaires .partenaire {
+  margin: 3em;
+  max-height: 5em;
+  max-width: 5em;
+}
+
+#Clients .client {
+  margin: 3em;
+  max-height: 5em;
+  max-width: 5em;
+}
+
+/* Owl Carousel */
 
 .logo-carousel {
   max-width: 83rem;
@@ -275,32 +240,17 @@ h2 {
   background-color: #000 !important;
 }
 
-#Partenaires .partenaire {
-  margin: 3em;
-  max-height: 5em;
-  max-width: 5em;
-}
-
-#Clients .client {
-  margin: 3em;
-  max-height: 5em;
-  max-width: 5em;
-}
+/* Contact */
 
 #Contact {
   display: grid;
-  grid-template-areas: "title title" "desc desc" "address socials";
+  grid-template-areas: "title title" "address socials" "form form";
   max-width: 85em;
   margin: auto;
 }
 
 #Contact h2 {
   grid-area: title;
-}
-
-#Contact > p {
-  grid-area: desc;
-  padding: 1em;
 }
 
 #Contact .address {
@@ -320,10 +270,30 @@ h2 {
   padding: 1em;
 }
 
+#Contact #contact-form {
+  grid-area: form;
+  padding: 1em;
+}
+
+#contact-form {
+  margin: auto;
+}
+
+label[for="miel"], input[name="miel"] {
+  position: absolute;
+  right: 100%;
+  opacity: 0;
+}
+
+/* Map */
+
 #Map {
     width: 100%;
     height: 30em;
+    z-index: 2;
 }
+
+/* Footer */
 
 footer {
   background-color: #E0E0E0;
@@ -336,15 +306,17 @@ footer p {
   line-height: 1.5em;
 }
 
+/* Responsiveness */
+
 @media screen and (max-width: 85em) {
   #Slider .logo {
     max-width: 100%;
   }
-  .section-text {
+  section.text {
     max-width: 63em;
     padding: 2em 1em;
   }
-  #Presentation .section-text {
+  #Presentation section.text {
     grid-template-columns: 1fr 1fr;
   }
   #Services>p {
@@ -402,14 +374,14 @@ footer p {
     padding: 1rem;
     max-width: 100%;
   }
-  #Presentation .section-text {
+  #Presentation section.text {
     grid-template-columns: 1fr;
   }
   #Presentation img {
     width: 100%;
     padding: 1em 0 0 0;
   }
-  .section-text {
+  section.text {
     padding: 1em;
   }
   .grid-8 {

@@ -1,20 +1,29 @@
-section#Contact
-    h2 Contact
-    p Notre formulaire de contact n'est pas encore disponible sur ce site. Merci de nous écrire directement à contact@aliant.fr ou d'utiliser le formulaire présent à cette adresse :
-        a(href="https://www.dcm4chee.fr/contact/")  https://www.dcm4chee.fr/contact/
-    div.address
-        address
-            p
-                span.b Aliant
-                br
-                | L'altaïr C
-                br
-                | 50 Chemin du val fleuri
-                br
-                | 06800 Cagnes-sur-Mer
-    div.socials
-        p
-            a(href="mailto:contact@aliant.fr") contact@aliant.fr
-            br
-            a(href="tel:+33493311359") 04 93 31 13 59
-#Map
+extends layout
+
+block content
+
+    section#Contact
+                
+        form(id="contact-form",action="send",method="POST",enctype="multipart/form-data")
+
+            label(for="firstname") Prénom
+            input(type="text",name="firstname")
+
+            label(for="lastname") Nom
+            input(type="text",name="lastname",required)
+
+            label(for="email") Adresse email
+            input(type="email",name="email",required)
+
+            label(for="subject") Objet
+            input(type="text",name="subject",required)
+
+            label(for="message") Message
+            textarea(name="message",required) 
+
+            label(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
+            input(type="text",name="miel")
+
+            button(type="submit",value="submit") Envoyer
+
+    script(src="/javascripts/nodemailer.js")
