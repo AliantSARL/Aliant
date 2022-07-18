@@ -83,7 +83,7 @@ transporter.verify(function (error, success) {
   }
 });
 
-router.post('/send', hcaptcha.middleware.hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
+router.post('/send', hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
 
   let form = new multiparty.Form();
   let data = {};
