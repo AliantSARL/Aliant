@@ -8,7 +8,6 @@ require('dotenv').config();
 const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
 const hcaptcha = require('hcaptcha');
-const cors = require('cors');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,27 +19,29 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', {title: 'Aliant'});
 });
 
-// middleware
-router.use(cors());
+const middleware_form = (req, res, next) => {
+  let form = new multiparty.Form();
+  let data = {};
 
+  form.parse(req, function (err, fields) {
+    if (err !== null)
+      return next(err);
 
+    Object.keys(fields).forEach(function (property) {
+      data[property] = fields[property].toString();
+    });
 
+    req.formData = data;
+    next();
+  });
+};
 
-
-// validate takes an hCaptcha secret and returns
-// an express middleware function
 const hcaptcha_middleware_validate = (secret) => (req, res, next) => {
-
-  console.log(req.body);
-
-  // get token from the body
-  // requires the body parser JSON middleware
-  // on the app that uses this middleware
-  const token = req.body && req.body.token;
+  const token = req.formData && req.formData['h-captcha-response'];
 
   // call next with an error if no token present
   if (!token) {
-    const err = new Error('bad request - no token provided in body');
+    const err = new Error('bad request - no token provided');
     err.status = 400;
     return next(err);
   }
@@ -59,10 +60,6 @@ const hcaptcha_middleware_validate = (secret) => (req, res, next) => {
     })
     .catch(next);
 };
-
-
-
-
 
 //nodemailer
 const transporter = nodemailer.createTransport({
@@ -85,40 +82,30 @@ transporter.verify(function (error, success) {
 
 //hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY)
 
-router.post('/send', (req, res) => {
+router.post('/send', middleware_form, hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
 
-  let form = new multiparty.Form();
-  let data = {};
+  data = req.formData;
 
-  form.parse(req, function (err, fields) {
-    console.log(fields);
+  if (data.miel !== '') {
+    data.subject = `[BOT] ${data.subject}`;
+  }
 
-    Object.keys(fields).forEach(function (property) {
-      data[property] = fields[property].toString();
-    });
+  const mail = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL,
+    subject: data.subject,
+    text: `${data.firstname} ${data.lastname} <${data.email}> \n${data.message}`,
+  };
 
-    console.log(data);
-
-    if (data.miel !== '') {
-      data.subject = `[BOT] ${data.subject}`;
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).render('error');
+    } else {
+      res.status(200).render('sent');
     }
-
-    const mail = {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
-      subject: data.subject,
-      text: `${data.firstname} ${data.lastname} <${data.email}> \n${data.message}`,
-    };
-
-    transporter.sendMail(mail, (err, data) => {
-      if (err) {
-        console.log(err);
-        res.status(500).render('error');
-      } else {
-        res.status(200).render('sent');
-      }
-    });
   });
+
 });
 
 module.exports = router;
