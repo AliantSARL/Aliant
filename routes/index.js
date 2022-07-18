@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', {title: 'Aliant', hCaptchaKey});
+  res.render('contact', {title: 'Aliant'});
 });
 
 // middleware
