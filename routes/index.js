@@ -8,7 +8,7 @@ require('dotenv').config();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Aliant'});
+  res.render('home', {title: 'Aliant'});
 });
 
 module.exports = router;

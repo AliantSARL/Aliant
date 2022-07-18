@@ -1,19 +1,44 @@
-footer
-
-    div.address
-        address
-            p
-                span.b Aliant
-                br
-                | L'altaïr C
-                br
-                | 50 Chemin du val fleuri
-                br
-                | 06800 Cagnes-sur-Mer
-    div.socials
-        p
-            a(href="mailto:contact@aliant.fr") contact@aliant.fr
-            br
-            a(href="tel:+33493311359") 04 93 31 13 59
-    br
-    p Copyright © 2021, Aliant S.A.R.L. All Rights Reserved.
+.container
+  footer.py-5
+    .row
+      .col-4
+        h5 Section
+        ul.nav.flex-column
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Home
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Features
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Pricing
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') FAQs
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') About
+      .col-4
+        h5 Section
+        ul.nav.flex-column
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Home
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Features
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') Pricing
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') FAQs
+          li.nav-item.mb-2
+            a.nav-link.p-0.text-muted(href='#') About
+    .d-flex.justify-content-between.py-4.my-4.border-top
+      p &copy; 2022 Aliant. Tous droits réservés.
+      ul.list-unstyled.d-flex
+        li.ms-3
+          a.link-dark(href='#')
+            svg.bi(width='24' height='24')
+              use(xlink:href='#twitter')
+        li.ms-3
+          a.link-dark(href='#')
+            svg.bi(width='24' height='24')
+              use(xlink:href='#instagram')
+        li.ms-3
+          a.link-dark(href='#')
+            svg.bi(width='24' height='24')
+              use(xlink:href='#facebook')

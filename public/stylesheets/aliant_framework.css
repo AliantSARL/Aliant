@@ -3,6 +3,15 @@
  *   All rights reserved.
  */
 
+h1, h2 {
+  text-align: center;
+}
+
+
+.bg-warning {
+  background-color: #FFC757!important;
+}
+
 /* Layout */
 
 .wrapper {
@@ -13,57 +22,50 @@
 
 /* Navigation bar */
 
-nav {
-  background-color: #FFFFFF;
-  box-shadow: 0 0 1em rgba(0,0,0,0.3);
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
+.navbar {
+  padding: 0;
+}
+
+.navbar .container-sm {
+  align-items: stretch;
+  padding: 0;
+}
+
+#navMenu ul {
+  height: 100%;
+}
+
+.navbar .logo {
+  height: 30px;
+  margin: 0.5em;
+}
+
+.navbar .nav-link {
+  display: flex;
+  align-self: stretch;
   align-items: center;
-  overflow: hidden;
-  z-index: 10;
+  padding: 0 1em 1em 1em!important;
 }
 
-nav .logo {
-  height: 6em;
-  padding: 1em;
+@media (min-width: 992px) {
+  .navbar .nav-item {
+    display: flex;
+    border-bottom: solid 0.3em #FFF;
+  }
+  .navbar .nav-item:hover {
+    border-bottom: solid 0.3em #E05D22;
+  }
+  .navbar .nav-link {
+    padding: 0 1em!important;
+  }
 }
 
-nav menu {
-  align-self: end;
-  font-size: 1.2em;
-}
-
-menu {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  list-style-type: none;
-}
-
-menu li {
-  border-bottom: solid 0.3em #FFF;
-}
-
-menu li:hover {
-  border-bottom: solid 0.3em #E05D22;
-}
-
-menu li a {
-  display: inline-block;
-  padding: 0.8em;
-}
-
-/* Content */
-
-.content {
-  background-color: #FFFFFF;
-}
-
-section.text {
-  max-width: 85em;
-  margin: 0 auto;
-  padding: 5em 1em;
+.navbar-toggler, .navbar-toggler:hover {
+  border: none;
+  margin: 0;
+  outline: 0;
+  background: none;
+  box-shadow: none!important;
 }
 
 /* Slider */
@@ -80,20 +82,14 @@ section.text {
   width: 100%;
   height: 100%;
   position: absolute;
-  background:
-          linear-gradient(#FFFFFF99, #E05D2299),
-          url(https://burst.shopifycdn.com/photos/black-and-yellow-electronic-chip.jpeg);
+  background: url(../images/Slide01V04.jpg);
   background-size: cover;
-  background-blend-mode:
-          hard-light,
-          normal;
-  filter: contrast(80%) brightness(90%) opacity(90%) saturate(120%);
-} /* Simplify */
+  background-attachment: fixed;
+}
 
 #Slider .first {
   z-index: 1;
   position: relative;
-  padding: 5em;
   color: white;
   min-height: 30em;
   max-height: 100vh;
@@ -103,88 +99,21 @@ section.text {
   text-shadow: 0 0 0.2em #00000088;
 }
 
-#Slider .box .logo {
+#Slider .container-sm .logo {
   width: 20em;
   margin-bottom: 1em;
   filter: brightness(1000%) drop-shadow(0 0 0.2em #00000055);
 }
 
-#Slider .box {
+#Slider .container-sm {
   position: relative;
-  max-width: 40em;
-  font-size: 1.4em;
-  font-weight: bold;
 }
 
-#Slider .box p {
+#Slider .container-sm p {
   text-align: left;
   line-height: 1.5em;
-}
-
-/* About */
-
-#Presentation {
-  width: 100%;
-  background: #FAFAFA;
-}
-
-#Presentation section.text {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-
-#Presentation img {
-  width: 100%;
-  padding-left: 2em;
-  filter: saturate(150%) opacity(70%) contrast(120%);
-}
-
-section.image img {
-  width: 100%;
-  display: block;
-}
-
-/* Services */
-
-#Services .desc {
-  max-width: 83rem;
-  font-size: 1.5em;
-  line-height: 1em;
-  margin: 0.5em auto;
-  text-align: center;
-}
-
-.grid-8 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(10em, 20em));
-  justify-content: center;
-  grid-gap: 1em;
-  padding: 1em;
-}
-
-#Services .cell {
-  background-color: #F3F3F3;
-  text-align: center;
-}
-
-#Services .cell header {
-  padding: 1em;
-  background: linear-gradient(#ffbd8b, #E05D22);
-}
-
-#Services .cell header h3 {
-  color: #FFFFFF;
-}
-
-#Services .cell p {
-  margin: 1em;
-  text-align: center;
-}
-
-#Services .cell img {
-  width: 5em;
-  margin: auto;
-  color: #FFFFFF;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 #Partenaires .partenaire {
@@ -202,9 +131,7 @@ section.image img {
 /* Owl Carousel */
 
 .logo-carousel {
-  max-width: 83rem;
-  margin: 0 auto 2em auto;
-  background-color: #FFF;
+  max-width: 90vw;
 }
 
 .single-logo {
@@ -242,33 +169,7 @@ section.image img {
 
 /* Contact */
 
-#Contact {
-  display: grid;
-  grid-template-areas: "title title" "address socials" "form form";
-  max-width: 85em;
-  margin: auto;
-}
 
-#Contact h2 {
-  grid-area: title;
-}
-
-#Contact .address {
-  grid-area: address;
-  margin: 1em;
-  background: #f1f1f1;
-  padding: 0.5em 1em 1em 1em;
-  border: solid 1px #d7d7d7;
-}
-
-.address p {
-  font-style: normal;
-}
-
-#Contact .socials {
-  grid-area: socials;
-  padding: 1em;
-}
 
 #Contact #contact-form {
   grid-area: form;
@@ -291,110 +192,4 @@ label[for="miel"], input[name="miel"] {
     width: 100%;
     height: 30em;
     z-index: 2;
-}
-
-/* Footer */
-
-footer {
-  background-color: #E0E0E0;
-  padding: 1em;
-}
-
-footer p {
-  text-align: center;
-  margin-top: 0;
-  line-height: 1.5em;
-}
-
-/* Responsiveness */
-
-@media screen and (max-width: 85em) {
-  #Slider .logo {
-    max-width: 100%;
-  }
-  section.text {
-    max-width: 63em;
-    padding: 2em 1em;
-  }
-  #Presentation section.text {
-    grid-template-columns: 1fr 1fr;
-  }
-  #Services>p {
-    max-width: 63rem;
-    padding: 0 1rem;
-  }
-  .grid-8 {
-    grid-template-columns: repeat(2, minmax(10em,30em));
-  }
-  .logo-carousel {
-    max-width: 63rem;
-  }
-  #Contact {
-    max-width: 63rem;
-  }
-}
-
-@media screen and (max-width: 65em) {
-  .logo-carousel {
-    max-width: 90vw;
-  }
-}
-
-@media screen and (max-width: 43em) {
-  nav {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-  nav .logo {
-    height: 8em;
-  }
-  menu {
-    grid-template-columns: 1fr;
-  }
-
-  menu li, menu li:hover {
-    border-bottom: solid 1px #FFFFFF;
-  }
-
-  menu li:last-child, menu li:last-child:hover {
-    border-bottom: none;
-  }
-
-  menu a {
-    width: 100%;
-    background-color: #FAF0EB;
-    text-align: center;
-  }
-
-  menu a:hover {
-    background-color: #f5e1d9;
-  }
-
-  #Slider .first {
-    padding: 1rem;
-    max-width: 100%;
-  }
-  #Presentation section.text {
-    grid-template-columns: 1fr;
-  }
-  #Presentation img {
-    width: 100%;
-    padding: 1em 0 0 0;
-  }
-  section.text {
-    padding: 1em;
-  }
-  .grid-8 {
-    grid-template-columns: 1fr;
-  }
-  #Contact {
-    grid-template-areas: "title title" "desc desc" "address address" "socials socials";
-    max-width: 100%;
-    margin: auto;
-  }
-}
-@media screen and (max-width: 22em) {
-  h2 {
-    font-size: 2em;
-  }
 }

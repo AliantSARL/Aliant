@@ -3,10 +3,10 @@ $('.logo-carousel').owlCarousel({
     autoplay:true,
     responsive:{
         0:{
-            items:1
+            items:3
         },
         200:{
-            items:2
+            items:3
         },
         400:{
             items:3
