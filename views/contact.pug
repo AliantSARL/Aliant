@@ -24,8 +24,9 @@ block content
             label(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
             input(type="text",name="miel")
 
-            .h-captcha(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d")
+            .h-captcha(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
 
-            button(type="submit",value="submit") Envoyer
+            button(type="submit",value="submit",disabled="true") Envoyer
 
     script(src='https://js.hcaptcha.com/1/api.js' async='' defer='')
+    script(src="/javascripts/hCaptcha.js")
