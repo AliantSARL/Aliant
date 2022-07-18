@@ -83,7 +83,9 @@ transporter.verify(function (error, success) {
   }
 });
 
-router.post('/send', hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
+//hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY)
+
+router.post('/send', (req, res) => {
 
   let form = new multiparty.Form();
   let data = {};
@@ -94,6 +96,8 @@ router.post('/send', hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KE
     Object.keys(fields).forEach(function (property) {
       data[property] = fields[property].toString();
     });
+
+    console.log(data);
 
     if (data.miel !== '') {
       data.subject = `[BOT] ${data.subject}`;
