@@ -7,6 +7,8 @@ const router = express.Router();
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
+const hcaptcha = require('express-hcaptcha');
+const cors = require('cors');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,9 +17,11 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/contact', function(req, res, next) {
-  res.render('contact', {title: 'Aliant'});
+  res.render('contact', {title: 'Aliant', hCaptchaKey});
 });
 
+// middleware
+router.use(cors());
 
 //nodemailer
 const transporter = nodemailer.createTransport({
@@ -38,7 +42,7 @@ transporter.verify(function (error, success) {
   }
 });
 
-router.post('/send', (req, res) => {
+router.post('/send', hcaptcha.middleware.validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
 
   let form = new multiparty.Form();
   let data = {};
