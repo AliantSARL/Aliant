@@ -12,6 +12,10 @@ h1, h2 {
   background-color: #FFC757!important;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Layout */
 
 .wrapper {
@@ -50,7 +54,7 @@ h1, h2 {
 @media (min-width: 992px) {
   .navbar .nav-item {
     display: flex;
-    border-bottom: solid 0.3em #FFF;
+    border-bottom: solid 0.3em var(--lt-color-gray-100);
   }
   .navbar .nav-item:hover {
     border-bottom: solid 0.3em #E05D22;
