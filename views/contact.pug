@@ -4,7 +4,7 @@ block content
 
     section#Contact
                 
-        form(id="contact-form",action="send",method="POST",enctype="multipart/form-data")
+        form(id="contact-form",action="contact/send",method="POST",enctype="multipart/form-data")
 
             label(for="firstname") Prénom
             input(type="text",name="firstname")
@@ -29,4 +29,6 @@ block content
             button(type="submit",value="submit",disabled="true") Envoyer
 
     script(src='https://js.hcaptcha.com/1/api.js' async='' defer='')
+    
+    // callback functions for the button
     script(src="/javascripts/hCaptcha.js")
