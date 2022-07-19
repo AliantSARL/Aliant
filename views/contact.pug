@@ -4,29 +4,29 @@ block content
 
     section#Contact
                 
-        form(id="contact-form",action="contact/send",method="POST",enctype="multipart/form-data")
+        form.col-sm-6.p-5(id="contact-form",action="contact/send",method="POST",enctype="multipart/form-data")
 
-            label(for="firstname") Prénom
-            input(type="text",name="firstname")
+            label.form-label(for="firstname") Prénom
+            input.form-control(type="text",name="firstname")
 
-            label(for="lastname") Nom
-            input(type="text",name="lastname",required)
+            label.form-label.pt-3(for="lastname") Nom
+            input.form-control(type="text",name="lastname",required)
 
-            label(for="email") Adresse email
-            input(type="email",name="email",required)
+            label.form-label.pt-3(for="email") Adresse email
+            input.form-control(type="email",name="email",required)
 
-            label(for="subject") Objet
-            input(type="text",name="subject",required)
+            label.form-label.pt-3(for="subject") Objet
+            input.form-control(type="text",name="subject",required)
 
-            label(for="message") Message
-            textarea(name="message",required) 
+            label.form-label.pt-3(for="message") Message
+            textarea.form-control(name="message",required) 
 
-            label(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
-            input(type="text",name="miel")
+            label.form-label.pt-3(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
+            input.form-control(type="text",name="miel")
 
-            .h-captcha(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
+            .h-captcha.pt-4(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
 
-            button(type="submit",value="submit",disabled="true") Envoyer
+            button.btn.btn-primary.mt-3(type="submit",value="submit",disabled) Envoyer
 
     script(src='https://js.hcaptcha.com/1/api.js' async='' defer='')
     
