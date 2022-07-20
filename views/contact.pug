@@ -2,31 +2,43 @@ extends layout
 
 block content
 
-    section#Contact
-                
-        form.col-lg-7.py-5(id="contact-form",action="contact/send",method="POST",enctype="multipart/form-data")
+    section.d-flex.justify-content-center#Contact
 
-            label.form-label(for="firstname") Prénom
-            input.form-control(type="text",name="firstname")
+        .col-lg-7.p-5
 
-            label.form-label.pt-3(for="lastname") Nom
-            input.form-control(type="text",name="lastname",required)
+            h1.pb-3 Nous contacter 
 
-            label.form-label.pt-3(for="email") Adresse email
-            input.form-control(type="email",name="email",required)
+            p Aliant se tient à votre disposition pour toutes vos demandes. Vous pouvez nous contacter :
 
-            label.form-label.pt-3(for="subject") Objet
-            input.form-control(type="text",name="subject",required)
+            ul
+                li Via le formulaire de contact ci-dessous ;
+                li Par téléphone au 04 93 31 13 59 ;
+                li Par email à l'adresse contact@aliant.fr ;
+                li Ou par voie postale : Aliant, 50 Chemin du Val Fleuri, 06800 Cagnes-sur-mer.
+                    
+            form.p-0.mt-5(id="contact-form",action="contact/send",method="POST",enctype="multipart/form-data")
 
-            label.form-label.pt-3(for="message") Message
-            textarea.form-control(name="message",required) 
+                label.form-label(for="firstname") Prénom
+                input.form-control(type="text",name="firstname")
 
-            label.form-label.pt-3(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
-            input.form-control(type="text",name="miel")
+                label.form-label.pt-3(for="lastname") Nom
+                input.form-control(type="text",name="lastname",required)
 
-            .h-captcha.pt-4(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
+                label.form-label.pt-3(for="email") Adresse email
+                input.form-control(type="email",name="email",required)
 
-            button.btn.btn-primary.mt-3(type="submit",value="submit",disabled) Envoyer
+                label.form-label.pt-3(for="subject") Objet
+                input.form-control(type="text",name="subject",required)
+
+                label.form-label.pt-3(for="message") Message
+                textarea.form-control(name="message",required) 
+
+                label.form-label.pt-3(for="miel") Pot de miel (ne pas remplir si vous êtes humain) :
+                input.form-control(type="text",name="miel")
+
+                .h-captcha.pt-4(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
+
+                button.btn.btn-primary.mt-3(type="submit",value="submit",disabled) Envoyer
 
     script(src='https://js.hcaptcha.com/1/api.js' async='' defer='')
     
