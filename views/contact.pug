@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-    section.d-flex.justify-content-center#Contact
+    section#Contact.d-flex.justify-content-center
 
         .col-lg-7.p-5
 
@@ -38,7 +38,7 @@ block content
 
                 .h-captcha.pt-4(data-sitekey="7f9b11ad-fc16-4cb6-99c7-160e9319c17d",data-callback="hcaptcha_callback",data-expired-callback="hcaptcha_expired_callback")
 
-                button.btn.btn-primary.mt-3(type="submit",value="submit",disabled) Envoyer
+                button.btn.btn-warning.mt-3(type="submit",value="submit",disabled) Envoyer
 
     script(src='https://js.hcaptcha.com/1/api.js' async='' defer='')
     

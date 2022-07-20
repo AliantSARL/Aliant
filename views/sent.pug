@@ -1,6 +1,8 @@
 extends layout
 
 block content
-    section.text
-        p Message envoyé avec succès.
-        a(href="/").button Retour à l'accueil 
+    section.d-flex.justify-content-center
+        .col-lg-7.p-5
+            p Message envoyé avec succès.
+            a(href="/")
+                button.btn.btn-warning Retour à l'accueil 
