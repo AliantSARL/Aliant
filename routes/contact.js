@@ -9,6 +9,8 @@ const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
 const hcaptcha = require('hcaptcha');
 
+let currentYear = new Date().getFullYear();
+
 /* GET contact page. */
 router.get('/', function(req, res, next) {
   res.render('contact', {title: 'Aliant', year: currentYear});
