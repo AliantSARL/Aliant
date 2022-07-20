@@ -11,7 +11,7 @@ const hcaptcha = require('hcaptcha');
 
 /* GET contact page. */
 router.get('/', function(req, res, next) {
-  res.render('contact', {title: 'Aliant'});
+  res.render('contact', {title: 'Aliant', year: currentYear});
 });
 
 /* Middleware parse form */
