@@ -1,7 +1,3 @@
-/*
- *   Copyright (c) 2021 
- *   All rights reserved.
- */
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -12,8 +8,8 @@ require("dotenv").config();
 
 const app = express();
 
-const indexRouter = require('./routes/index');
-const contactRouter = require('./routes/contact');
+const indexRouter = require('./backend/routes/index');
+const contactRouter = require('./backend/routes/contact');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'frontend/views'));

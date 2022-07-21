@@ -1,7 +1,3 @@
-/*
- *   Copyright (c) 2021 
- *   All rights reserved.
- */
 const express = require('express');
 const router = express.Router();
 require('dotenv').config();
@@ -83,10 +79,6 @@ transporter.verify(function (error, success) {
 router.post('/send', middleware_form, hcaptcha_middleware_validate(process.env.HCAPTCHA_SECRET_KEY), (req, res) => {
 
   data = req.formData;
-
-  if (data.miel !== '') {
-    data.subject = `[BOT] ${data.subject}`;
-  }
 
   const mail = {
     from: process.env.EMAIL,

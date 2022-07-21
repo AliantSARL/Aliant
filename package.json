@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www & npm run scss",
-    "scss": "sass --watch frontend/scss/index.scss frontend/static/stylesheets/style.css"
+    "dev": "watch.sh",
+    "scss": "sass --watch frontend/scss/index.scss frontend/css/style.css"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dompurify": "^2.3.5",
@@ -19,7 +20,7 @@
     "morgan": "~1.9.1",
     "multiparty": "^4.2.2",
     "nodemailer": "^6.7.0",
-    "passport": "^0.5.2",
+    "passport": "^0.6.0",
     "pug": "^3.0.2",
     "slugify": "^1.6.5"
   },
